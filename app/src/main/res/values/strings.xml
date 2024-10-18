@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="client_id">1008509475497-k01asoo9gnii2ubb29hra5vq6ej7r18l.apps.googleusercontent.com</string>
+    <!-- awal_ strings -->
+
+    <string name="app_name">Teka.in</string>
+    <string name="ek_img_content">ExportKit Image</string>
+    <string name="daftar_ek1_string">DAFTAR</string>
+    <string name="masuk_ek1_string">MASUK</string>
+    <string name="_09_41_string">09:41</string>
+
+    <!-- splash strings -->
+
+    <string name="teka_in_string">Teka.in</string>
+
+    <!-- daftar__wali_murid_ strings -->
+    <!-- login_ string -->
+
+    <string name="silahkan_melakukan_pendaftaran_akun_anda_untuk_dapat_string">Silahkan melakukan pendaftaran akun anda untuk dapat</string>
+    <string name="mengakses_fitur_yang_tersedia_di_teka_in_mobile_app_string">Mengakses fitur yang tersedia di <font color='#229799'>teka.in mobile app</font></string>
+    <string name="masukan_nama_string"><font color='#78000000'>Masukan nama</font></string>
+    <string name="welcome_to_back_string">Selamat Datang</string>
+    <string name="nama_string">Nama</string>
+    <string name="alamat_string">Alamat</string>
+    <string name="no_telepon_string">No Telepon</string>
+    <string name="password_string">Password</string>
+    <string name="masukan_alamat_string"><font color='#78000000'>Masukan alamat</font></string>
+    <string name="masukan_no_telepon_string"><font color='#78000000'>Masukan no telepon</font></string>
+    <string name="masukan_password_string"><font color='#78000000'>Masukan password</font></string>
+    <string name="ulangi_password_string">Ulangi Password</string>
+    <string name="ulangi_password_anda_string"><font color='#78000000'>Ulangi password anda</font></string>
+    <string name="daftar_string">Daftar</string>
+    <string name="_apakah_anda_sudah_memiliki_akun__masuk_string">Apakah anda sudah memiliki akun?</string>
+    <string name="masuk_google"><font color='#229799'>Masuk</font></string>
+    <string name="_apakah_anda_belum_memiliki_akun__daftar_string">Apakah anda belum memiliki akun? <font color='#229799'>  Daftar</font></string>
+    <string name="masuk_dengan_google_string">Masuk dengan Google </string>
+
+    <string name="lupa_kata_sandi"><font color='#229799'>Lupa kata sandi</font></string>
+    <string name="masukan_email_string">Masukan email</string>
+    <string name="send_ek1_string">Kirim</string>
+    <string name="forgot_your_password__string">Lupa Kata Sandi</string>
+    <string name="enter_your_email_address_and_we_will_share_a_link_to_create_a_new_password__string">masukkan email aktif  anda!</string>
+
+    <string name="masukkan_kode_jika_belum_masuk_klik_kirim_ulang__string">masukkan kode, jika belum masuk klik kirim ulang !</string>
+    <string name="masukan_kode__string">Masukan kode</string>
+
+    <string name="masukkan_kata_sandi_baru_dan_konfirmasi__string">Masukkan kata sandi baru dan konfirmasi </string>
+    <string name="masukan_kata_sandi_baru__string">Masukkan kata sandi baru</string>
+    <string name="konfirmasi_kata_sandi__string">Konfirmasi kata sandi</string>
+    <string name="default_web_client_id">604719660965-tm3vc9lo7rud2ilml6q4cojvp845573p.apps.googleusercontent.com</string>
+</resources>

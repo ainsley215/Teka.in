@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "604719660965",
+    "project_id": "tekain-f92c9",
+    "storage_bucket": "tekain-f92c9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:604719660965:android:d01e3279b50a93bcab324c",
+        "android_client_info": {
+          "package_name": "com.example.teka.in"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEsOY84BusUdUZn8VNaB7FBoXc6g2TqsY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

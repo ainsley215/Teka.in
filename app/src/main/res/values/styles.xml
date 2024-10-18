@@ -1,0 +1,18 @@
+<resources>
+	<!-- Default theme -->
+	<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+		<item name="colorPrimary">@color/colorPrimary</item>
+		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+		<item name="colorAccent">@color/colorAccent</item>
+	</style>
+
+	<!-- Theme with custom status bar and navigation bar colors -->
+	<style name="Theme.YourApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+		<!-- Ubah warna status bar (atas) dan navigation bar (bawah) ke #229799 -->
+		<item name="android:statusBarColor">#229799</item>
+		<item name="android:navigationBarColor">#229799</item>
+		<!-- Nonaktifkan translucent jika ingin warna solid -->
+		<item name="android:windowTranslucentStatus">false</item>
+		<item name="android:windowTranslucentNavigation">false</item>
+	</style>
+</resources>
