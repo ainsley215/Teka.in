@@ -9,7 +9,6 @@ import android.widget.Toast;
 import android.text.InputType;
 
 import androidx.activity.EdgeToEdge;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -17,13 +16,14 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Daftar__wali__murid extends AppCompatActivity {
     private boolean isPasswordVisible = false;
@@ -45,6 +45,7 @@ public class Daftar__wali__murid extends AppCompatActivity {
         View daftarButton = findViewById(R.id._rectangle_349);
         View masukGoogleButton = findViewById(R.id.masuk_text);
         EditText passwordEditText = findViewById(R.id.masukan_password);
+        EditText konfirmasiPasswordEditText = findViewById(R.id.ulangi_password_anda);
 
         // Set up Google Sign-In
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -56,6 +57,26 @@ public class Daftar__wali__murid extends AppCompatActivity {
 
         // OnClickListener for Daftar button
         daftarButton.setOnClickListener(v -> {
+            String password = passwordEditText.getText().toString();
+            String confirmPassword = konfirmasiPasswordEditText.getText().toString();
+
+            // Memeriksa apakah password dan konfirmasi password cocok
+            if (!password.equals(confirmPassword)) {
+                Toast.makeText(Daftar__wali__murid.this, "Password tidak cocok", Toast.LENGTH_SHORT).show();
+                return; // Keluar dari fungsi jika password tidak cocok
+            }
+
+            // Validasi password
+            List<String> validationErrors = validatePassword(password);
+            if (!validationErrors.isEmpty()) {
+                // Tampilkan kesalahan
+                for (String error : validationErrors) {
+                    Toast.makeText(Daftar__wali__murid.this, error, Toast.LENGTH_SHORT).show();
+                }
+                return; // Keluar dari fungsi jika ada kesalahan
+            }
+
+            // Lanjutkan dengan proses pendaftaran
             Intent intent = new Intent(Daftar__wali__murid.this, Login.class);
             startActivity(intent);
             finish();
@@ -64,7 +85,9 @@ public class Daftar__wali__murid extends AppCompatActivity {
         // OnClickListener for Google Sign-In button
         rectangle_287.setOnClickListener(v -> signIn());
 
-        // Password visibility toggle
+
+
+        // Password visibility toggle for the password EditText
         passwordEditText.setOnTouchListener((v, event) -> {
             final int DRAWABLE_RIGHT = 2;
             if (event.getAction() == MotionEvent.ACTION_UP) {
@@ -74,6 +97,42 @@ public class Daftar__wali__murid extends AppCompatActivity {
             }
             return false;
         });
+
+        // Password visibility toggle for the confirmation EditText
+        konfirmasiPasswordEditText.setOnTouchListener((v, event) -> {
+            final int DRAWABLE_RIGHT = 2;
+            if (event.getAction() == MotionEvent.ACTION_UP) {
+                if (event.getRawX() >= (konfirmasiPasswordEditText.getRight() - konfirmasiPasswordEditText.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
+                    togglePasswordVisibility(konfirmasiPasswordEditText);
+                }
+            }
+            return false;
+        });
+    }
+
+    private List<String> validatePassword(String password) {
+        List<String> errors = new ArrayList<>();
+
+        // Cek panjang password
+        if (password.length() < 8) {
+            errors.add("Password harus terdiri dari setidaknya 8 karakter.");
+        }
+
+        // Cek apakah password mengandung huruf besar, huruf kecil, angka, dan karakter khusus
+        if (!password.matches(".*[A-Z].*")) {
+            errors.add("Password harus mengandung setidaknya satu huruf besar.");
+        }
+        if (!password.matches(".*[a-z].*")) {
+            errors.add("Password harus mengandung setidaknya satu huruf kecil.");
+        }
+        if (!password.matches(".*\\d.*")) {
+            errors.add("Password harus mengandung setidaknya satu angka.");
+        }
+        if (!password.matches(".*[^a-zA-Z0-9].*")) {
+            errors.add("Password harus mengandung setidaknya satu karakter khusus.");
+        }
+
+        return errors; // Kembalikan daftar kesalahan
     }
 
     private void signIn() {
@@ -113,10 +172,12 @@ public class Daftar__wali__murid extends AppCompatActivity {
 
     private void togglePasswordVisibility(EditText passwordEditText) {
         if (isPasswordVisible) {
-            passwordEditText.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD | InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+            passwordEditText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+            passwordEditText.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.hide, 0);
             isPasswordVisible = false;
         } else {
-            passwordEditText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD | InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+            passwordEditText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+            passwordEditText.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.eye, 0);
             isPasswordVisible = true;
         }
         // Move the cursor to the end of the input
