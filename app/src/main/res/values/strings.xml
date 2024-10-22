@@ -33,7 +33,8 @@
     <string name="daftar_string">Daftar</string>
     <string name="_apakah_anda_sudah_memiliki_akun__masuk_string">Apakah anda sudah memiliki akun?</string>
     <string name="masuk_google"><font color='#229799'>Masuk</font></string>
-    <string name="_apakah_anda_belum_memiliki_akun__daftar_string">Apakah anda belum memiliki akun? <font color='#229799'>  Daftar</font></string>
+    <string name="_apakah_anda_belum_memiliki_akun_string">Apakah anda belum memiliki akun?</string>
+    <string name="Daftar"><font color='#229799'>Daftar</font></string>
     <string name="masuk_dengan_google_string">Masuk dengan Google </string>
 
     <string name="lupa_kata_sandi"><font color='#229799'>Lupa kata sandi</font></string>

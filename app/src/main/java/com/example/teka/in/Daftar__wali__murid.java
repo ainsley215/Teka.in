@@ -39,6 +39,7 @@ public class Daftar__wali__murid extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.daftar__wali__murid_);
 
+
         rectangle_287 = findViewById(R.id.rectangle_287);
         auth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
@@ -84,7 +85,6 @@ public class Daftar__wali__murid extends AppCompatActivity {
 
         // OnClickListener for Google Sign-In button
         rectangle_287.setOnClickListener(v -> signIn());
-
 
 
         // Password visibility toggle for the password EditText
