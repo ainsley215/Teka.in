@@ -1,26 +1,44 @@
 {
   "project_info": {
-    "project_number": "604719660965",
-    "project_id": "tekain-f92c9",
-    "storage_bucket": "tekain-f92c9.appspot.com"
+    "project_number": "569721291801",
+    "project_id": "tekainapplication",
+    "storage_bucket": "tekainapplication.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:604719660965:android:d01e3279b50a93bcab324c",
+        "mobilesdk_app_id": "1:569721291801:android:c5bbbddee86174d13f1688",
         "android_client_info": {
-          "package_name": "com.example.teka.in"
+          "package_name": "com.example.Teka.in"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "569721291801-juk4lk4tdjc8d749ec9fmhhtpc9bre31.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.Teka.in",
+            "certificate_hash": "bd7f2cccb859e54a30cd18688968e522d9dc6225"
+          }
+        },
+        {
+          "client_id": "569721291801-7dr8rrfvke6j39kjbb5jh8bisi74cm4u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyDEsOY84BusUdUZn8VNaB7FBoXc6g2TqsY"
+          "current_key": "AIzaSyCT6FwtdnPkixRByBBE7cKOksaeXyOCzns"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "569721291801-7dr8rrfvke6j39kjbb5jh8bisi74cm4u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

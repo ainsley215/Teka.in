@@ -8,6 +8,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -72,6 +73,14 @@ public class Login extends AppCompatActivity {
             }
             return false;
         });
+
+        // Inisialisasi tombol Lupa Password
+        TextView forgotPasswordButton = findViewById(R.id.lupa_password); // Pastikan ID sesuai
+        forgotPasswordButton.setOnClickListener(v -> {
+            Intent intent = new Intent(Login.this, Lupa_Password__email.class);
+            startActivity(intent);
+        });
+
 
     }
 

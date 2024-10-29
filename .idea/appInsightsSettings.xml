@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="com.example.teka.in" />
-                  <option name="mobileSdkAppId" value="1:604719660965:android:d01e3279b50a93bcab324c" />
-                  <option name="projectId" value="tekain-f92c9" />
-                  <option name="projectNumber" value="604719660965" />
+                  <option name="appId" value="com.example.Teka.in" />
+                  <option name="mobileSdkAppId" value="1:569721291801:android:c5bbbddee86174d13f1688" />
+                  <option name="projectId" value="tekainapplication" />
+                  <option name="projectNumber" value="569721291801" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
