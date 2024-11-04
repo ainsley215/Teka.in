@@ -2,7 +2,7 @@
   "project_info": {
     "project_number": "569721291801",
     "project_id": "tekainapplication",
-    "storage_bucket": "tekainapplication.appspot.com"
+    "storage_bucket": "tekainapplication.firebasestorage.app"
   },
   "client": [
     {

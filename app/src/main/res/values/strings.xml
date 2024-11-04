@@ -23,10 +23,10 @@
     <string name="welcome_to_back_string">Selamat Datang</string>
     <string name="nama_string">Nama</string>
     <string name="alamat_string">Alamat</string>
-    <string name="no_telepon_string">No Telepon</string>
+    <string name="alamat_email_string">Alamat Email</string>
     <string name="password_string">Password</string>
     <string name="masukan_alamat_string"><font color='#78000000'>Masukan alamat</font></string>
-    <string name="masukan_no_telepon_string"><font color='#78000000'>Masukan no telepon</font></string>
+    <string name="masukan_alamat_email_string"><font color='#78000000'>Masukan alamat email</font></string>
     <string name="masukan_password_string"><font color='#78000000'>Masukan password</font></string>
     <string name="ulangi_password_string">Ulangi Password</string>
     <string name="ulangi_password_anda_string"><font color='#78000000'>Ulangi password anda</font></string>
@@ -43,12 +43,13 @@
     <string name="forgot_your_password__string">Lupa Kata Sandi</string>
     <string name="enter_your_email_address_and_we_will_share_a_link_to_create_a_new_password__string">masukkan email aktif  anda!</string>
 
-    <string name="masukkan_kode_jika_belum_masuk_klik_kirim_ulang__string">masukkan kode, jika belum masuk klik kirim ulang !</string>
+    <string name="masukkan_kode_jika_belum_masuk__string">masukkan kode, jika belum masuk</string>
+    <string name="klik_kirim_ulang__string">klik kirim ulang !</string>
     <string name="masukan_kode__string">Masukan kode</string>
 
 
     <string name="masukkan_kata_sandi_baru_dan_konfirmasi__string">Masukkan kata sandi baru dan konfirmasi </string>
     <string name="masukan_kata_sandi_baru__string">Masukkan kata sandi baru</string>
     <string name="konfirmasi_kata_sandi__string">Konfirmasi kata sandi</string>
-    <string name="default_web_client_id">604719660965-tm3vc9lo7rud2ilml6q4cojvp845573p.apps.googleusercontent.com</string>
+    <string name="default_web_client_id">1:569721291801:android:c5bbbddee86174d13f1688</string>
 </resources>

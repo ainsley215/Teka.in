@@ -6,16 +6,12 @@ import android.text.InputType;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.gms.auth.api.identity.BeginSignInRequest;
 import com.google.android.gms.auth.api.identity.Identity;
@@ -26,11 +22,13 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Login extends AppCompatActivity {
     private boolean isPasswordVisible = false;
     private static final int RC_SIGN_IN = 123;
     private FirebaseAuth mAuth;
+    private FirebaseFirestore firestore;
     private SignInClient oneTapClient;
     private BeginSignInRequest signInRequest;
     private View googleSignInButton;
@@ -39,11 +37,12 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.login_);
+        setContentView(R.layout.login_);  // Pastikan nama file layout benar
 
-        EditText passwordEditText = findViewById(R.id.masukan_password);
-        googleSignInButton = findViewById(R.id.Butoon_masuk_google);
+        EditText passwordEditText = findViewById(R.id.masukan_password); // Pastikan ID benar di layout XML
+        googleSignInButton = findViewById(R.id.group_google); // Pastikan ID benar di layout XML
         mAuth = FirebaseAuth.getInstance();
+        firestore = FirebaseFirestore.getInstance();
 
         // Inisialisasi Google Sign-In client
         oneTapClient = Identity.getSignInClient(this);
@@ -56,12 +55,7 @@ public class Login extends AppCompatActivity {
                                 .build())
                 .build();
 
-        googleSignInButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                signInWithGoogle();
-            }
-        });
+        googleSignInButton.setOnClickListener(v -> signInWithGoogle());
 
         // Password visibility toggle for the password EditText
         passwordEditText.setOnTouchListener((v, event) -> {
@@ -74,14 +68,17 @@ public class Login extends AppCompatActivity {
             return false;
         });
 
-        // Inisialisasi tombol Lupa Password
-        TextView forgotPasswordButton = findViewById(R.id.lupa_password); // Pastikan ID sesuai
+        TextView forgotPasswordButton = findViewById(R.id.lupa_password); // Pastikan ID benar di layout XML
         forgotPasswordButton.setOnClickListener(v -> {
             Intent intent = new Intent(Login.this, Lupa_Password__email.class);
             startActivity(intent);
         });
 
-
+        TextView MenuDaftar = findViewById(R.id.daftar_text); // Pastikan ID benar di layout XML
+        MenuDaftar.setOnClickListener(v -> {
+            Intent intent = new Intent(Login.this, Daftar__wali__murid.class);
+            startActivity(intent);
+        });
     }
 
     private void signInWithGoogle() {
@@ -99,7 +96,7 @@ public class Login extends AppCompatActivity {
                 });
     }
 
-
+    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
@@ -129,6 +126,41 @@ public class Login extends AppCompatActivity {
     private void updateUI(FirebaseUser user) {
         if (user != null) {
             Toast.makeText(this, "Welcome, " + user.getDisplayName(), Toast.LENGTH_SHORT).show();
+            checkIfFirstTimeLogin(user);
+        }
+    }
+
+    private void checkIfFirstTimeLogin(FirebaseUser user) {
+        if (user != null) {
+            firestore.collection("users").document(user.getUid()).get()
+                    .addOnSuccessListener(documentSnapshot -> {
+                        if (documentSnapshot.exists()) {
+                            Boolean isFirstTime = documentSnapshot.getBoolean("isFirstTimeLogin");
+                            if (isFirstTime != null && isFirstTime) {
+                                firestore.collection("users").document(user.getUid())
+                                        .update("isFirstTimeLogin", false)
+                                        .addOnSuccessListener(aVoid -> {
+                                            Intent intent = new Intent(Login.this, Account_Settings.class);
+                                            startActivity(intent);
+                                            finish();
+                                        })
+                                        .addOnFailureListener(e -> {
+                                            Toast.makeText(this, "Error updating user data.", Toast.LENGTH_SHORT).show();
+                                            Log.w("Firestore", "Error updating document", e);
+                                        });
+                            } else {
+                                Intent intent = new Intent(Login.this, Dashboard.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        } else {
+                            Toast.makeText(this, "User data not found.", Toast.LENGTH_SHORT).show();
+                        }
+                    })
+                    .addOnFailureListener(e -> {
+                        Toast.makeText(this, "Failed to retrieve user data.", Toast.LENGTH_SHORT).show();
+                        Log.w("Firestore", "Error getting document", e);
+                    });
         }
     }
 

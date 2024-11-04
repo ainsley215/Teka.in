@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
     <!-- Permission for internet access -->
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -15,16 +14,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tekain"
         tools:targetApi="31">
-
+        <activity
+            android:name=".Account_Settings"
+            android:exported="false" />
+        <activity
+            android:name=".Dashboard"
+            android:exported="false" />
         <activity
             android:name=".Splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".Awal"
             android:exported="false" />
@@ -33,11 +37,7 @@
             android:exported="false" />
         <activity
             android:name=".Login"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
+            android:exported="false">
         </activity>
         <activity
             android:name=".Lupa_Password__email"

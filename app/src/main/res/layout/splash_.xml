@@ -9,38 +9,31 @@
     android:background="@color/colorPrimary"
     tools:context=".Splash">
 
-    <RelativeLayout
-        android:id="@+id/content_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <View
+        android:id="@+id/__bg__splash"
+        android:layout_width="@dimen/_180sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:background="@drawable/__bg__splash_shape"
+        tools:layout_editor_absoluteX="88sdp"
+        tools:layout_editor_absoluteY="358sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
-        <View
-            android:id="@+id/__bg__splash"
-            android:layout_width="411dp"
-            android:layout_height="846dp"
-            android:layout_alignStart="@+id/red_neutral_minimal_font_logo_1"
-            android:layout_marginStart="-1dp"
-            android:layout_marginTop="0dp"
-            android:background="@drawable/__bg__splash_shape" />
-
-        <ImageView
-            android:id="@+id/red_neutral_minimal_font_logo_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="87dp"
-            android:layout_marginTop="305dp"
-            android:layout_marginEnd="82dp"
-            android:layout_marginBottom="300dp"
-            android:contentDescription="red_neutral_minimal_font_logo_1"
-            android:gravity="center"
-            android:src="@drawable/red_neutral_minimal_font_logo_1"
-            app:layout_constraintDimensionRatio="1:1" />
-
-    </RelativeLayout>
+    <ImageView
+        android:id="@+id/red_neutral_minimal_font_logo_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="red_neutral_minimal_font_logo_1"
+        android:src="@drawable/avd_tekain"
+        app:layout_constraintDimensionRatio="1:1"
+        tools:layout_editor_absoluteX="88sdp"
+        tools:layout_editor_absoluteY="357sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
@@ -69,5 +62,4 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.7"/>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

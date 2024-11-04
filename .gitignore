@@ -1,3 +1,4 @@
+config/config.properties
 *.iml
 .gradle
 /local.properties

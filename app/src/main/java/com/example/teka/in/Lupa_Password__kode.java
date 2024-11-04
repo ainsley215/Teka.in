@@ -9,16 +9,14 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.PhoneAuthCredential;
-import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Lupa_Password__kode extends AppCompatActivity {
 
     private EditText otpEditText;
     private View verifyOtpButton;
-    private FirebaseAuth auth;
-    private String verificationId;
+    private String userEmail; // Menyimpan email pengguna
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,40 +24,52 @@ public class Lupa_Password__kode extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.lupa_password__kode_);
 
-        otpEditText = findViewById(R.id.masukan_kode);
-        verifyOtpButton = findViewById(R.id.Button_Send);
-        auth = FirebaseAuth.getInstance();
+        otpEditText = findViewById(R.id.masukan_kode); // Ganti dengan ID yang sesuai
+        verifyOtpButton = findViewById(R.id.Button_Send); // Ganti dengan ID yang sesuai
 
-        // Ambil verificationId dari Intent
-        verificationId = getIntent().getStringExtra("verificationId");
+        // Ambil email dari Intent
+        userEmail = getIntent().getStringExtra("userEmail");
 
-        // Ambil OTP dari Intent jika ada
-        String otp = getIntent().getStringExtra("otp");
-        if (otp != null) {
-            otpEditText.setText(otp); // Isi otomatis OTP
-        }
-
-        verifyOtpButton.setOnClickListener(v -> {
-            String otpInput = otpEditText.getText().toString().trim();
-            if (!otpInput.isEmpty() && verificationId != null) {
-                verifyOtp(verificationId, otpInput);
-            } else {
-                Toast.makeText(this, "Masukkan OTP yang valid!", Toast.LENGTH_SHORT).show();
+        verifyOtpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                verifyOtp();
             }
         });
     }
 
-    private void verifyOtp(String verificationId, String otp) {
-        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId, otp);
-        auth.signInWithCredential(credential).addOnCompleteListener(task -> {
-            if (task.isSuccessful()) {
-                Toast.makeText(Lupa_Password__kode.this, "Verifikasi berhasil!", Toast.LENGTH_SHORT).show();
-                // Pindah ke halaman untuk mengatur kata sandi baru
-                startActivity(new Intent(Lupa_Password__kode.this, Lupa_Password__sandi__baru.class));
-                finish();
-            } else {
-                Toast.makeText(Lupa_Password__kode.this, "Verifikasi gagal! Coba lagi.", Toast.LENGTH_SHORT).show();
-            }
-        });
+    private void verifyOtp() {
+        String userInputOtp = otpEditText.getText().toString().trim();
+        if (!userInputOtp.isEmpty()) {
+            int userOtp = Integer.parseInt(userInputOtp);
+
+            // Ambil OTP dari Firestore
+            FirebaseFirestore db = FirebaseFirestore.getInstance();
+            db.collection("otpCollection").document(userEmail) // Menggunakan email pengguna
+                    .get()
+                    .addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+                                int savedOtp = document.getLong("otp").intValue(); // Mengambil OTP yang disimpan
+
+                                if (userOtp == savedOtp) {
+                                    Toast.makeText(Lupa_Password__kode.this, "OTP valid. Silakan lanjut ke pengaturan kata sandi baru.", Toast.LENGTH_SHORT).show();
+                                    // Panggil metode untuk reset kata sandi
+                                    Intent intent = new Intent(Lupa_Password__kode.this, Lupa_Password__sandi__baru.class);
+                                    startActivity(intent);
+                                } else {
+                                    Toast.makeText(Lupa_Password__kode.this, "OTP tidak valid. Silakan coba lagi.", Toast.LENGTH_SHORT).show();
+                                }
+                            } else {
+                                Toast.makeText(Lupa_Password__kode.this, "Tidak ada OTP yang ditemukan. Silakan coba lagi.", Toast.LENGTH_SHORT).show();
+                            }
+                        } else {
+                            Toast.makeText(Lupa_Password__kode.this, "Gagal mengambil OTP. Silakan coba lagi.", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+        } else {
+            Toast.makeText(this, "Mohon masukkan OTP.", Toast.LENGTH_SHORT).show();
+        }
     }
 }

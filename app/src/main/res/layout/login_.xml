@@ -20,259 +20,163 @@
 
             <View
                 android:id="@+id/_bg__daftar__wali_murid_2"
-                android:layout_width="411dp"
-                android:layout_height="846dp"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="0dp"
+                android:layout_width="@dimen/_411sdp"
+                android:layout_height="@dimen/_846sdp"
+                android:layout_marginStart="@dimen/_0sdp"
+                android:layout_marginTop="@dimen/_0sdp"
                 android:background="@drawable/_bg__daftar__wali_murid__shape" />
+
+            <EditText
+                android:id="@+id/masukan_password"
+                android:layout_width="@dimen/_230sdp"
+                android:layout_height="@dimen/_48sdp"
+                android:layout_alignStart="@+id/rectangle_347"
+                android:layout_alignEnd="@+id/rectangle_347"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_93sdp"
+                android:layout_marginTop="@dimen/_310sdp"
+                android:layout_marginEnd="@dimen/_7sdp"
+                android:background="@null"
+                android:drawableRight="@drawable/password_toggle"
+                android:elevation="@dimen/_6sdp"
+                android:hint="@string/masukan_password_string"
+                android:inputType="textPassword"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11sdp" />
+
+            <TextView
+                android:id="@+id/password"
+                android:layout_width="@dimen/_165sdp"
+                android:layout_height="@dimen/_17sdp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/_63sdp"
+                android:layout_marginLeft="@dimen/_80sdp"
+                android:layout_marginTop="@dimen/_302sdp"
+                android:layout_marginEnd="@dimen/_166sdp"
+                android:text="@string/password_string"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_14sdp" />
+
+            <View
+                android:id="@+id/rectangle_347"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="@dimen/_29sdp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/_63sdp"
+                android:layout_marginTop="@dimen/_320sdp"
+                android:layout_marginEnd="@dimen/_61sdp"
+                android:background="@drawable/rectangle_347_shape"
+                android:elevation="@dimen/_5sdp" />
+
+            <TextView
+                android:id="@+id/nama"
+                android:layout_width="@dimen/_170sdp"
+                android:layout_height="@dimen/_17sdp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/_63sdp"
+                android:layout_marginLeft="@dimen/_80sdp"
+                android:layout_marginTop="@dimen/_250sdp"
+                android:layout_marginEnd="@dimen/_200sdp"
+                android:text="@string/nama_string"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_14sdp"
+                android:maxLines="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mengakses_fitur_yang_tersedia_di_teka_in_mobile_app" />
 
             <View
                 android:id="@+id/rectangle_344"
-                android:layout_width="250dp"
-                android:layout_height="36dp"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="@dimen/_29sdp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="80dp"
-                android:layout_marginTop="295dp"
-                android:layout_marginEnd="81dp"
-                android:background="@drawable/rectangle_344_shape" />
+                android:layout_marginStart="@dimen/_63sdp"
+                android:layout_marginTop="@dimen/_270sdp"
+                android:layout_marginEnd="@dimen/_61sdp"
+                android:background="@drawable/rectangle_344_shape"
+                android:elevation="@dimen/_5sdp" />
+
+            <EditText
+                android:id="@+id/masukan_nama"
+                android:layout_width="@dimen/_230sdp"
+                android:layout_height="@dimen/_48sdp"
+                android:layout_alignStart="@+id/rectangle_344"
+                android:layout_alignEnd="@+id/rectangle_344"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_260sdp"
+                android:layout_marginEnd="@dimen/_7sdp"
+                android:background="@null"
+                android:elevation="@dimen/_6sdp"
+                android:hint="@string/masukan_nama_string"
+                android:inputType="textPersonName"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11sdp" />
 
             <TextView
                 android:id="@+id/silahkan_melakukan_pendaftaran_akun_anda_untuk_dapat"
-                android:layout_width="323.5dp"
-                android:layout_height="32.5dp"
+                android:layout_width="@dimen/_323sdp"
+                android:layout_height="@dimen/_17sdp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="80dp"
-                android:layout_marginLeft="80dp"
-                android:layout_marginTop="203dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_200sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:maxLines="1"
                 android:text="@string/silahkan_melakukan_pendaftaran_akun_anda_untuk_dapat_string"
                 android:textColor="@color/black"
-                android:textSize="11sp"
+                android:textSize="@dimen/_10sdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/welcome_to_back" />
 
             <TextView
                 android:id="@+id/mengakses_fitur_yang_tersedia_di_teka_in_mobile_app"
-                android:layout_width="323.5dp"
-                android:layout_height="32.5dp"
+                android:layout_width="@dimen/_323sdp"
+                android:layout_height="@dimen/_17sdp"
                 android:layout_alignTop="@+id/silahkan_melakukan_pendaftaran_akun_anda_untuk_dapat"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="80dp"
-                android:layout_marginLeft="80dp"
-                android:layout_marginTop="13dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_13sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:maxLines="1"
                 android:text="@string/mengakses_fitur_yang_tersedia_di_teka_in_mobile_app_string"
                 android:textColor="@color/black"
-                android:textSize="11sp"
+                android:textSize="@dimen/_10sdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/silahkan_melakukan_pendaftaran_akun_anda_untuk_dapat" />
 
-            <EditText
-                android:id="@+id/masukan_nama"
-                android:layout_width="230dp"
-                android:layout_height="48dp"
-                android:layout_alignStart="@+id/rectangle_344"
-                android:layout_alignEnd="@+id/rectangle_344"
-                android:layout_marginStart="13dp"
-                android:layout_marginLeft="93dp"
-                android:layout_marginTop="290dp"
-                android:layout_marginEnd="7dp"
-                android:background="@null"
-                android:hint="@string/masukan_nama_string"
-                android:inputType="textPersonName"
-                android:textSize="11sp" />
-
             <TextView
                 android:id="@+id/welcome_to_back"
-                android:layout_width="122dp"
-                android:layout_height="39.5dp"
+                android:layout_width="@dimen/_98sdp"
+                android:layout_height="@dimen/_20sdp"
                 android:layout_gravity="center_horizontal|center"
-                android:layout_marginStart="66dp"
-                android:layout_marginLeft="66dp"
-                android:layout_marginTop="175dp"
-                android:layout_marginEnd="223dp"
-                android:gravity="center"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_marginLeft="@dimen/_66sdp"
+                android:layout_marginTop="@dimen/_180sdp"
                 android:text="@string/welcome_to_back_string"
                 android:textColor="@color/black"
-                android:textSize="13sp"
+                android:textSize="@dimen/_13sdp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/red_neutral_minimal_font_logo__2__transformed_1" />
 
-            <TextView
-                android:id="@+id/lupa_password"
-                android:layout_width="115dp"
-                android:layout_height="20dp"
-                android:layout_below="@+id/rectangle_345"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="245dp"
-                android:layout_marginLeft="245dp"
-                android:layout_marginTop="7dp"
-                android:layout_marginEnd="51dp"
-                android:text="@string/lupa_kata_sandi"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/nama"
-                android:layout_width="165dp"
-                android:layout_height="30dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="80dp"
-                android:layout_marginLeft="80dp"
-                android:layout_marginTop="275dp"
-                android:layout_marginEnd="166dp"
-                android:text="@string/nama_string"
-                android:textColor="@color/colorPrimary"
-                android:textSize="14sp" />
-
-            <View
-                android:id="@+id/rectangle_345"
-                android:layout_width="250dp"
-                android:layout_height="36dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="80dp"
-                android:layout_marginTop="362dp"
-                android:layout_marginEnd="81dp"
-                android:background="@drawable/rectangle_345_shape" />
-
-            <EditText
-                android:id="@+id/masukan_password"
-                android:layout_width="230dp"
-                android:layout_height="48dp"
-                android:layout_alignStart="@+id/rectangle_345"
-                android:layout_alignEnd="@+id/rectangle_345"
-                android:layout_marginStart="13dp"
-                android:layout_marginLeft="90dp"
-                android:layout_marginTop="355dp"
-                android:layout_marginEnd="7dp"
-                android:background="@null"
-                android:drawableRight="@drawable/password_toggle"
-                android:hint="@string/masukan_password_string"
-                android:inputType="textPassword"
-                android:textColor="@color/black"
-                android:textSize="11sp" />
-
-            <TextView
-                android:id="@+id/password"
-                android:layout_width="165dp"
-                android:layout_height="30dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="80dp"
-                android:layout_marginLeft="80dp"
-                android:layout_marginTop="342dp"
-                android:layout_marginEnd="166dp"
-                android:text="@string/password_string"
-                android:textColor="@color/colorPrimary"
-                android:textSize="14sp" />
-
-            <View
-                android:id="@+id/_rectangle_349"
-                android:layout_width="229dp"
-                android:layout_height="35dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="95dp"
-                android:layout_marginTop="460dp"
-                android:layout_marginEnd="93dp"
-                android:background="@drawable/_rectangle_349_shape" />
-
-            <TextView
-                android:id="@+id/daftar"
-                android:layout_width="132dp"
-                android:layout_height="43dp"
-                android:layout_alignStart="@+id/_rectangle_349"
-                android:layout_alignEnd="@+id/_rectangle_349"
-                android:layout_gravity="center_horizontal|center"
-                android:layout_marginStart="45dp"
-                android:layout_marginLeft="140dp"
-                android:layout_marginTop="455dp"
-                android:layout_marginEnd="46dp"
-                android:gravity="center"
-                android:text="@string/daftar_string"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/_apakah_anda_sudah_memiliki_akun__masuk"
-                android:layout_width="190dp"
-                android:layout_height="25dp"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="93dp"
-                android:layout_marginLeft="93dp"
-                android:layout_marginTop="498dp"
-                android:text="@string/_apakah_anda_belum_memiliki_akun_string"
-                android:textColor="@color/black"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/masuk_text"
-                android:layout_width="40dp"
-                android:layout_height="25dp"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="2dp"
-                android:layout_marginLeft="285dp"
-                android:layout_marginTop="498dp"
-                android:layout_marginEnd="86dp"
-                android:layout_toEndOf="@+id/_apakah_anda_sudah_memiliki_akun__masuk"
-                android:text="@string/Daftar"
-                android:textSize="12sp" />
-
-            <View   android:id="@+id/Butoon_masuk_google"
-                android:background="@drawable/rectangle_287_shape"
-                android:layout_marginStart="95dp"
-                android:layout_marginTop="550dp"
-                android:layout_width="235dp"
-                android:layout_height="35dp" />
-
-
-            <RelativeLayout android:id="@+id/group_88"
-                android:layout_marginTop="550dp"
-                android:layout_marginStart="136dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                >
-
-                <TextView android:id="@+id/masuk_dengan_google"
-                    android:textSize="12sp"
-                    android:textColor="@color/black"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="9dp"
-                    android:layout_width="158dp"
-                    android:layout_height="32dp"
-                    android:text="@string/masuk_dengan_google_string"
-                    />
-
-            </RelativeLayout>
-
-            <ImageView android:id="@+id/_7123025_logo_google_g_icon_1"
-                android:src="@drawable/_7123025_logo_google_g_icon_1"
-                android:contentDescription="_7123025_logo_google_g_icon_1"
-                android:layout_marginStart="130dp"
-                android:layout_marginTop="550dp"
-                android:layout_width="38dp"
-                android:layout_height="36dp" />
-
             <ImageView
                 android:id="@+id/red_neutral_minimal_font_logo__2__transformed_1"
-                android:layout_width="90dp"
-                android:layout_height="90dp"
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="@dimen/_90sdp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="87dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginStart="29dp"
+                android:layout_marginTop="74dp"
+                android:layout_marginEnd="31dp"
                 android:contentDescription="red_neutral_minimal_font_logo__2__transformed_1"
                 android:src="@drawable/red_neutral_minimal_font_logo__2__transformed_1"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -280,6 +184,120 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/lupa_password"
+                android:layout_width="@dimen/_115sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_below="@+id/rectangle_347"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/_170sdp"
+                android:layout_marginLeft="@dimen/_245sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:layout_marginEnd="@dimen/_50sdp"
+                android:text="@string/lupa_kata_sandi"
+                android:textSize="@dimen/_11sdp"
+                android:maxLines="1" />
+
+            <View
+                android:id="@+id/_rectangle_349"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_29sdp"
+                android:layout_below="@+id/lupa_password"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/_80sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_78sdp"
+                android:background="@drawable/_rectangle_349_shape"
+                android:elevation="@dimen/_5sdp" />
+
+            <TextView
+                android:id="@+id/daftar"
+                android:layout_width="@dimen/_132sdp"
+                android:layout_height="@dimen/_43sdp"
+                android:layout_alignStart="@+id/_rectangle_349"
+                android:layout_alignTop="@+id/_rectangle_349"
+                android:layout_alignEnd="@+id/_rectangle_349"
+                android:layout_alignBottom="@+id/_rectangle_349"
+                android:layout_gravity="center_horizontal|center"
+                android:layout_marginStart="@dimen/_46sdp"
+                android:layout_marginTop="@dimen/_minus9sdp"
+                android:layout_marginEnd="@dimen/_46sdp"
+                android:layout_marginBottom="@dimen/_minus10sdp"
+                android:elevation="@dimen/_6sdp"
+                android:gravity="center"
+                android:text="@string/daftar_string"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_18sdp"
+                android:textStyle="bold" />
+
+
+            <RelativeLayout
+                android:id="@+id/group_google"
+                android:layout_width="@dimen/_160sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_below="@+id/group_daftar"
+                android:layout_marginLeft="@dimen/_77sdp"
+                android:layout_marginTop="22dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/_7123025_logo_google_g_icon_1"
+                    android:layout_width="@dimen/_38sdp"
+                    android:layout_height="@dimen/_36sdp"
+                    android:layout_marginLeft="@dimen/_0sdp"
+                    android:layout_marginTop="@dimen/_0sdp"
+                    android:src="@drawable/_7123025_logo_google_g_icon_1" />
+
+                <TextView
+                    android:id="@+id/masuk_dengan_google"
+                    android:layout_width="@dimen/_130sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_marginLeft="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:autoSizeMaxTextSize="@dimen/_100sdp"
+                    android:autoSizeMinTextSize="@dimen/_12sdp"
+                    android:autoSizeTextType="uniform"
+                    android:text="@string/masuk_dengan_google_string"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/group_daftar"
+                android:layout_width="@dimen/_230sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_below="@+id/_rectangle_349"
+                android:layout_marginLeft="@dimen/_57sdp"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/daftar_text"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_17sdp"
+                    android:layout_marginTop="@dimen/_0sdp"
+                    android:layout_marginEnd="@dimen/_0sdp"
+                    android:layout_marginStart="@dimen/_175sdp"
+                    android:text="@string/Daftar"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_11sdp" />
+
+                <TextView
+                    android:id="@+id/_apakah_anda_belum_memiliki_akun__masuk"
+                    android:layout_width="@dimen/_190sdp"
+                    android:layout_height="@dimen/_17sdp"
+                    android:layout_marginStart="@dimen/_0sdp"
+                    android:layout_marginTop="@dimen/_0sdp"
+                    android:maxLines="1"
+                    android:text="@string/_apakah_anda_belum_memiliki_akun_string"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp" />
+            </RelativeLayout>
 
         </RelativeLayout>
     </ScrollView>
