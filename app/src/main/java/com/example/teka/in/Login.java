@@ -32,6 +32,9 @@ public class Login extends AppCompatActivity {
     private SignInClient oneTapClient;
     private BeginSignInRequest signInRequest;
     private View googleSignInButton;
+    private EditText emailEditText;
+    private EditText passwordEditText;
+    private View loginButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,10 +42,15 @@ public class Login extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.login_);  // Pastikan nama file layout benar
 
-        EditText passwordEditText = findViewById(R.id.masukan_password); // Pastikan ID benar di layout XML
+        EditText passwordEditText = findViewById(R.id.masukkan_password); // Pastikan ID benar di layout XML
         googleSignInButton = findViewById(R.id.group_google); // Pastikan ID benar di layout XML
         mAuth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
+
+        emailEditText = findViewById(R.id.masukan_AlamatEmail);
+        loginButton = findViewById(R.id.LoginButton);
+
+        loginButton.setOnClickListener(v -> loginUser ());
 
         // Inisialisasi Google Sign-In client
         oneTapClient = Identity.getSignInClient(this);
@@ -80,6 +88,62 @@ public class Login extends AppCompatActivity {
             startActivity(intent);
         });
     }
+
+    private void loginUser () {
+        String email = emailEditText.getText().toString().trim();
+        String password = passwordEditText.getText().toString().trim();
+
+        if (email.isEmpty() || password.isEmpty()) {
+            Toast.makeText(this, "Please enter email and password", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, task -> {
+                    if (task.isSuccessful()) {
+                        // Sign in success
+                        FirebaseUser  user = mAuth.getCurrentUser ();
+                        checkUserInFirestore(user);
+                    } else {
+                        // If sign in fails, display a message to the user.
+                        Toast.makeText(Login.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
+    private void checkUserInFirestore(FirebaseUser  user) {
+        if (user != null) {
+            firestore.collection("users").document(user.getUid()).get()
+                    .addOnSuccessListener(documentSnapshot -> {
+                        if (documentSnapshot.exists()) {
+                            // User exists in Firestore
+                            Boolean isFirstTime = documentSnapshot.getBoolean("isFirstTimeLogin");
+                            if (isFirstTime != null && isFirstTime) {
+                                // If it's the first time logging in, redirect to account settings
+                                Intent intent = new Intent(Login.this, Account_Settings.class);
+                                startActivity(intent);
+                                finish();
+                            } else {
+                                // If it's not the first time, redirect to the dashboard
+                                Intent intent = new Intent(Login.this, Dashboard.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        } else {
+                            Toast.makeText(Login.this, "User  data not found.", Toast.LENGTH_SHORT).show();
+                        }
+                    })
+                    .addOnFailureListener(e -> {
+                        Toast.makeText(Login.this, "Failed to retrieve user data.", Toast.LENGTH_SHORT).show();
+                        Log.w("Firestore", "Error getting document", e);
+                    });
+        } else {
+            Toast.makeText(Login.this, "User  is null.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+
 
     private void signInWithGoogle() {
         oneTapClient.beginSignIn(signInRequest)

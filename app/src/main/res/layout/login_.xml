@@ -27,7 +27,7 @@
                 android:background="@drawable/_bg__daftar__wali_murid__shape" />
 
             <EditText
-                android:id="@+id/masukan_password"
+                android:id="@+id/masukkan_password"
                 android:layout_width="@dimen/_230sdp"
                 android:layout_height="@dimen/_48sdp"
                 android:layout_alignStart="@+id/rectangle_347"
@@ -79,8 +79,8 @@
                 android:layout_marginStart="@dimen/_63sdp"
                 android:layout_marginLeft="@dimen/_80sdp"
                 android:layout_marginTop="@dimen/_250sdp"
-                android:layout_marginEnd="@dimen/_200sdp"
-                android:text="@string/nama_string"
+                android:layout_marginEnd="@dimen/_160sdp"
+                android:text="@string/alamatEmail_string"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/_14sdp"
                 android:maxLines="1"
@@ -101,7 +101,7 @@
                 android:elevation="@dimen/_5sdp" />
 
             <EditText
-                android:id="@+id/masukan_nama"
+                android:id="@+id/masukan_AlamatEmail"
                 android:layout_width="@dimen/_230sdp"
                 android:layout_height="@dimen/_48sdp"
                 android:layout_alignStart="@+id/rectangle_344"
@@ -111,7 +111,7 @@
                 android:layout_marginEnd="@dimen/_7sdp"
                 android:background="@null"
                 android:elevation="@dimen/_6sdp"
-                android:hint="@string/masukan_nama_string"
+                android:hint="@string/masukan_AlamatEmail_string"
                 android:inputType="textPersonName"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_11sdp" />
@@ -201,7 +201,7 @@
                 android:maxLines="1" />
 
             <View
-                android:id="@+id/_rectangle_349"
+                android:id="@+id/LoginButton"
                 android:layout_width="@dimen/_200sdp"
                 android:layout_height="@dimen/_29sdp"
                 android:layout_below="@+id/lupa_password"
@@ -217,10 +217,10 @@
                 android:id="@+id/daftar"
                 android:layout_width="@dimen/_132sdp"
                 android:layout_height="@dimen/_43sdp"
-                android:layout_alignStart="@+id/_rectangle_349"
-                android:layout_alignTop="@+id/_rectangle_349"
-                android:layout_alignEnd="@+id/_rectangle_349"
-                android:layout_alignBottom="@+id/_rectangle_349"
+                android:layout_alignStart="@+id/LoginButton"
+                android:layout_alignTop="@+id/LoginButton"
+                android:layout_alignEnd="@+id/LoginButton"
+                android:layout_alignBottom="@+id/LoginButton"
                 android:layout_gravity="center_horizontal|center"
                 android:layout_marginStart="@dimen/_46sdp"
                 android:layout_marginTop="@dimen/_minus9sdp"
@@ -228,7 +228,7 @@
                 android:layout_marginBottom="@dimen/_minus10sdp"
                 android:elevation="@dimen/_6sdp"
                 android:gravity="center"
-                android:text="@string/daftar_string"
+                android:text="@string/masuk_ek1_string"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_18sdp"
                 android:textStyle="bold" />
@@ -272,7 +272,7 @@
                 android:id="@+id/group_daftar"
                 android:layout_width="@dimen/_230sdp"
                 android:layout_height="@dimen/_28sdp"
-                android:layout_below="@+id/_rectangle_349"
+                android:layout_below="@+id/LoginButton"
                 android:layout_marginLeft="@dimen/_57sdp"
                 android:layout_marginTop="5dp">
 

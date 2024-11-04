@@ -19,8 +19,10 @@
 
     <string name="silahkan_melakukan_pendaftaran_akun_anda_untuk_dapat_string">Silahkan melakukan pendaftaran akun anda untuk dapat</string>
     <string name="mengakses_fitur_yang_tersedia_di_teka_in_mobile_app_string">Mengakses fitur yang tersedia di <font color='#229799'>teka.in mobile app</font></string>
+    <string name="masukan_AlamatEmail_string"><font color='#78000000'>Masukan alamat email</font></string>
     <string name="masukan_nama_string"><font color='#78000000'>Masukan nama</font></string>
     <string name="welcome_to_back_string">Selamat Datang</string>
+    <string name="alamatEmail_string">Alamat Email</string>
     <string name="nama_string">Nama</string>
     <string name="alamat_string">Alamat</string>
     <string name="alamat_email_string">Alamat Email</string>
