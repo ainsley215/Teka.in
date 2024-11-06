@@ -62,4 +62,17 @@ dependencies {
 
     //for animated
     implementation ("com.google.android.material:material:1.9.0")
+
+    //circel pic user
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
+
+    //Import Glide, memuat gambar dari internet ke dalam aplikasi
+    implementation ("com.github.bumptech.glide:glide:4.12.0")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
+
+    //scroll image
+    implementation ("androidx.viewpager2:viewpager2:1.0.0")
+    implementation ("androidx.recyclerview:recyclerview:1.2.1")
+
+    //enskripsi
 }

@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="red_neutral_minimal_font_logo_1"
-        android:src="@drawable/avd_tekain"
+        android:src="@drawable/red_neutral_minimal_font_logo_1"
         app:layout_constraintDimensionRatio="1:1"
         tools:layout_editor_absoluteX="88sdp"
         tools:layout_editor_absoluteY="357sdp"

@@ -213,6 +213,7 @@
                 android:background="@drawable/_rectangle_349_shape"
                 android:elevation="@dimen/_5sdp" />
 
+
             <TextView
                 android:id="@+id/daftar"
                 android:layout_width="@dimen/_132sdp"
@@ -222,17 +223,17 @@
                 android:layout_alignEnd="@+id/LoginButton"
                 android:layout_alignBottom="@+id/LoginButton"
                 android:layout_gravity="center_horizontal|center"
-                android:layout_marginStart="@dimen/_46sdp"
-                android:layout_marginTop="@dimen/_minus9sdp"
-                android:layout_marginEnd="@dimen/_46sdp"
-                android:layout_marginBottom="@dimen/_minus10sdp"
+                android:layout_marginStart="47dp"
+                android:layout_marginTop="-12dp"
+                android:layout_marginEnd="52dp"
+                android:layout_marginBottom="-11dp"
                 android:elevation="@dimen/_6sdp"
                 android:gravity="center"
+                android:maxLines="1"
                 android:text="@string/masuk_ek1_string"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_18sdp"
                 android:textStyle="bold" />
-
 
             <RelativeLayout
                 android:id="@+id/group_google"

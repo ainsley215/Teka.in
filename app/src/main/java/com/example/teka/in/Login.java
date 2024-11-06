@@ -120,12 +120,12 @@ public class Login extends AppCompatActivity {
                             Boolean isFirstTime = documentSnapshot.getBoolean("isFirstTimeLogin");
                             if (isFirstTime != null && isFirstTime) {
                                 // If it's the first time logging in, redirect to account settings
-                                Intent intent = new Intent(Login.this, Account_Settings.class);
+                                Intent intent = new Intent(Login.this, Dashboard.class);
                                 startActivity(intent);
                                 finish();
                             } else {
                                 // If it's not the first time, redirect to the dashboard
-                                Intent intent = new Intent(Login.this, Dashboard.class);
+                                Intent intent = new Intent(Login.this, Account_Settings.class);
                                 startActivity(intent);
                                 finish();
                             }
@@ -204,7 +204,7 @@ public class Login extends AppCompatActivity {
                                 firestore.collection("users").document(user.getUid())
                                         .update("isFirstTimeLogin", false)
                                         .addOnSuccessListener(aVoid -> {
-                                            Intent intent = new Intent(Login.this, Account_Settings.class);
+                                            Intent intent = new Intent(Login.this, Dashboard.class);
                                             startActivity(intent);
                                             finish();
                                         })
@@ -213,7 +213,7 @@ public class Login extends AppCompatActivity {
                                             Log.w("Firestore", "Error updating document", e);
                                         });
                             } else {
-                                Intent intent = new Intent(Login.this, Dashboard.class);
+                                Intent intent = new Intent(Login.this, Account_Settings.class); //
                                 startActivity(intent);
                                 finish();
                             }

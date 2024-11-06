@@ -54,4 +54,5 @@
     <string name="masukan_kata_sandi_baru__string">Masukkan kata sandi baru</string>
     <string name="konfirmasi_kata_sandi__string">Konfirmasi kata sandi</string>
     <string name="default_web_client_id">1:569721291801:android:c5bbbddee86174d13f1688</string>
+    <string name="notification_icon">Ikon Notifikasi</string>
 </resources>

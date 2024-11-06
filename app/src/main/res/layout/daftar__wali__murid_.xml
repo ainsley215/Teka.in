@@ -144,7 +144,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="@dimen/_63sdp"
                 android:layout_marginTop="@dimen/_303sdp"
-                android:layout_marginEnd="@dimen/_200sdp"
+                android:layout_marginEnd="@dimen/_180sdp"
                 android:text="@string/alamat_string"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/_14sdp" />
@@ -169,10 +169,11 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="@dimen/_63sdp"
                 android:layout_marginLeft="@dimen/_80sdp"
+                android:layout_marginEnd="@dimen/_99sdp"
                 android:layout_marginTop="@dimen/_353sdp"
-                android:layout_marginEnd="@dimen/_166sdp"
                 android:text="@string/alamat_email_string"
                 android:textColor="@color/colorPrimary"
+                android:maxLines="1"
                 android:textSize="@dimen/_14sdp" />
 
             <View
@@ -231,7 +232,7 @@
                 android:background="@null"
                 android:elevation="@dimen/_6sdp"
                 android:hint="@string/masukan_alamat_email_string"
-                android:inputType="phone"
+                android:inputType="textEmailAddress"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_11sdp" />
 
